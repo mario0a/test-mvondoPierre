@@ -15,15 +15,28 @@
 
 </div>
 
-    {% for jeux in jeu %}
-    <div class="card" style="width: 18rem; text-align: center">
-        <div class="card-body">
-            <h5 class="card-title">{{ jeux.nom }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ jeux.description }}</h6>
-            <button href="{{ path('details_jeu') }}" class="btn btn-primary">Voir</button>
+    <div class="container">
+        <div class="row">
+            {% for jeux in jeu %}
+            <div class="col-6">
+
+                <div class="card mt-3 tab-card">
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+                            <h5 class="card-title">{{ jeux.nom }}</h5>
+                            <a href="{{ path('jeu_detail',{'id':jeux.id}) }}" class="btn btn-primary">Voir</a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>{% endfor %}
         </div>
     </div>
-    {% endfor %}
+
+{#    {% include('styles/card/card.css') %}#}
 {% endblock %}
 
 

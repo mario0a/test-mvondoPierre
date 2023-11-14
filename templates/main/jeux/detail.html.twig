@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Jeu{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Détail du jeu {{ jeu.nom }}</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card mt-3 tab-card">
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+                            <h5 class="card-title">{{ jeu.nom }}</h5>
+                            <p class="card-text">{{ jeu.description |raw}}</p>
+                            <a href="{{ path('app_main') }}" class="btn btn-primary">Retour à la liste des jeux</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
