@@ -7,18 +7,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Bienvenue sur Loca Jeu</h1>
+    <h1>Detail du jeu {{ jeux.nom }} </h1>
 
-    <p>Une page factice permettant louer de faux jeux de sociétés.</p>
-
-    <p>Voici la liste des jeux référencés sur le site :</p>
 
 </div>
 
     {% for jeux in jeu %}
     <div class="card" style="width: 18rem; text-align: center">
         <div class="card-body">
-            <h5 class="card-title">{{ jeux.nom }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ jeux.description }}</h6>
             <button href="{{ path('details_jeu') }}" class="btn btn-primary">Voir</button>
         </div>

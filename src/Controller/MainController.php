@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Jeu;
 use App\Repository\JeuRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,4 +17,17 @@ class MainController extends AbstractController
             'jeu'=>$jeuRepository->findAll(),
         ]);
     }
+
+
+
+    /**
+     * @Route("/detail-jeu/{id}", name="details_jeu")
+     */
+    public function details(Jeu $jeu, JeuRepository $jeuRepository): Response
+    {
+        return $this->render('main/detail.html.twig', [
+            'jeu' => $jeu,
+        ]);
+    }
+
 }
